@@ -1,0 +1,11 @@
+services:
+    rustapp:
+        build:
+            dockerfile: Dockerfile
+        depends_on:
+            - redis
+
+    redis:
+        image: redis:latest
+        volumes:
+            - ./redis_data:/data
